@@ -1,0 +1,58 @@
+# Xcode (from gitignore.io)
+build/
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata
+*.xccheckout
+*.moved-aside
+DerivedData
+*.hmap
+*.ipa
+*.xcuserstate
+*.dSYM.zip
+*.dSYM
+
+# CocoaPod
+Pods/*
+
+# Carthage
+Carthage/Checkouts
+Carthage/Build
+
+# others
+*.swp
+!.gitkeep
+.DS_Store
+
+# env
+env.plist
+
+# r.swift
+/R.generated.swift
+
+# gemfile
+/vendor/bundle
+
+# fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+
+# slather
+slather/reports
+
+# firebase
+GoogleService-Info.plist
+
+# node_modules
+/node_modules
+
+# env value
+/*.settings
