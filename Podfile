@@ -9,6 +9,11 @@ target 'push-sample' do
   pod 'SnapKit'
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Messaging'
+  pod 'Firebase/Core'
+
+
 
   target 'push-sampleTests' do
     inherit! :search_paths
