@@ -38,7 +38,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
-       // Print message ID.
+       print(">>> didReceiveRemoteNotification")
+
        if let messageID = userInfo["gcm.message_id"] {
            print("Message ID: \(messageID)")
        }
@@ -49,7 +50,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any],
                     fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-       // Print message ID.
+       print(">>> didReceiveRemoteNotification::completionHandler")
+
        if let messageID = userInfo["gcm.message_id"] {
            print("Message ID: \(messageID)")
        }
@@ -82,6 +84,8 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
    func userNotificationCenter(_ center: UNUserNotificationCenter,
                                willPresent notification: UNNotification,
                                withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+       print(">>> willPresent")
+
        let userInfo = notification.request.content.userInfo
 
        if let messageID = userInfo["gcm.message_id"] {
@@ -96,6 +100,8 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
    func userNotificationCenter(_ center: UNUserNotificationCenter,
                                didReceive response: UNNotificationResponse,
                                withCompletionHandler completionHandler: @escaping () -> Void) {
+       print(">>> didReceive")
+
        let userInfo = response.notification.request.content.userInfo
        if let messageID = userInfo["gcm.message_id"] {
            print("Message ID: \(messageID)")
